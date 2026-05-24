@@ -1,0 +1,2 @@
+# Add your Python dependencies here
+# Example: requests==2.28.0
