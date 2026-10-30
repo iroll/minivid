@@ -144,6 +144,7 @@ class MiniVidWindow(QMainWindow):
         QShortcut(QKeySequence(Qt.Key.Key_Tab), self, activated=self.next_video)
         QShortcut(QKeySequence(Qt.Key.Key_Backtab), self, activated=self.previous_video)
         QShortcut(QKeySequence(Qt.Key.Key_Delete), self, activated=self.delete_current)
+        QShortcut(QKeySequence(Qt.Key.Key_Backspace), self, activated=self.delete_current)
         QShortcut(QKeySequence(Qt.Key.Key_Space), self, activated=self.toggle_pause)
         QShortcut(QKeySequence(Qt.Key.Key_Escape), self, activated=self.close)
 
