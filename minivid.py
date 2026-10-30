@@ -206,8 +206,18 @@ class MiniVidWindow(QMainWindow):
         self.play_current()
 
     def toggle_pause(self) -> None:
-        if self.folder.current is not None:
-            self.player.pause()
+        if self.folder.current is None:
+            return
+
+        state = self.player.get_state()
+        if state == vlc.State.Ended:
+            self.player.set_time(0)
+            self.player.play()
+            self.resolution_timer.start()
+        elif state == vlc.State.Playing:
+            self.player.set_pause(1)
+        elif state == vlc.State.Paused:
+            self.player.set_pause(0)
 
     def update_video_resolution(self) -> None:
         state = self.player.get_state()

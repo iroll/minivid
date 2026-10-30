@@ -28,6 +28,11 @@ window.
 On Windows, drag a video file onto `minivid.bat` to launch minivid directly with
 that file.
 
+On macOS, drag a video file onto `minivid.app` to launch it. The app expects the
+upstream Python installer at `/Library/Frameworks/Python.framework`; install
+the required packages for that Python with `python3 -m pip install -r
+requirements.txt`.
+
 If Windows prints "UNC paths are not supported", CMD was started from a network
 folder. Set a shortcut's **Start in** folder to `C:\Users\Isaac\minivid` (or your
 local minivid folder). The batch launcher handles network paths with `pushd`,
